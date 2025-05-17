@@ -7,12 +7,6 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #0E1338;
-    background-image: url('images/15.avif'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    
     
 }
 .navbar {
@@ -56,35 +50,74 @@ body {
 .nav-links a:hover {
     color: #007BFF;
 }
-.main-wrapper {
+/* Main layout */
+.main-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  flex: 1;
 }
 
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #0052a0;
+  padding: 30px 10px;
+  min-height: calc(100vh - 100px);
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin: 25px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 20px;
+  position: relative;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar li.active a::before,
+.sidebar li a:hover::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #ffd700;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+}
 
 .card {
   background-color: white;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1200px;
 }
 
 .card h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 26px;
   font-weight: bold;
   color: #333;
 }
 
-
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
 }
 
 thead {
@@ -93,7 +126,7 @@ thead {
 }
 
 th, td {
-  padding: 15px 20px; 
+  padding: 15px 20px;
   text-align: left;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -106,14 +139,19 @@ tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
 
-thead th:first-child {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+thead th {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-thead th:last-child {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+td a {
+  color: #0066b3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+td a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Styles */
@@ -129,15 +167,22 @@ thead th:last-child {
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 10px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .content {
+    padding: 20px;
   }
 
   .card {
-    padding: 30px;
-    width: 100%;
-    max-width: 100%;
+    padding: 20px;
   }
 
   table {

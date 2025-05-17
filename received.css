@@ -7,12 +7,6 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #0E1338;
-    background-image: url('images/15.avif'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    
     
 }
 .navbar {
@@ -56,91 +50,116 @@ body {
 .nav-links a:hover {
     color: #007BFF;
 }
-.main-wrapper {
+/* Main layout */
+.main-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  flex: 1;
 }
 
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #0052a0;
+  padding: 30px 10px;
+  min-height: calc(100vh - 100px);
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin: 25px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 20px;
+  position: relative;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar li.active a::before,
+.sidebar li a:hover::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #ffd700;
+}
+
+
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 .card {
   background-color: white;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 25px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1100px;
+  transition: 0.3s;
 }
 
 .card h2 {
+  margin-bottom: 25px;
   font-size: 24px;
-  margin-bottom: 20px;
   font-weight: bold;
-  color: #333;
+  color: #003366;
 }
 
-
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
 }
 
 thead {
-  background-color: #004a99;
+  background-color: #0052a0;
   color: white;
 }
 
-th, td {
-  padding: 15px 20px; 
+thead th {
+  padding: 16px;
+  font-size: 15px;
   text-align: left;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #ffffff;
 }
 
 thead th:first-child {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  overflow: hidden;
 }
 
 thead th:last-child {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  overflow: hidden;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 15px;
+}
 
-  .logo {
-    gap: 10px;
-  }
+tbody tr:nth-child(even) {
+  background-color: #f5f7fa;
+}
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .card {
-    padding: 30px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  table {
-    font-size: 14px;
-  }
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
 }
