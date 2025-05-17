@@ -114,7 +114,9 @@ body {
   font-weight: bold;
   color: #333;
 }
-
+.table-wrapper {
+  overflow-x: auto;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -154,31 +156,70 @@ td a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .logo {
-    gap: 10px;
-  }
-
-  .nav-links {
-    margin-top: 20px;
-    display: flex;
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .main-content {
     flex-direction: column;
   }
 
   .sidebar {
     width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin: 10px 15px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .sidebar li.active a::before,
+  .sidebar li a:hover::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
+    border-radius: 0;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .program-title {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .content {
-    padding: 20px;
+    padding: 20px 10px;
   }
 
   .card {
@@ -186,6 +227,32 @@ td a:hover {
   }
 
   table {
+    font-size: 13px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .program-title {
+    font-size: 18px;
+  }
+
+  .nav-links a {
     font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .card h2 {
+    font-size: 20px;
   }
 }
