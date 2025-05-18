@@ -150,3 +150,51 @@ body {
     width: 100%;
     max-width: 300px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .nav-left {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .program-title {
+    margin: 10px 0 0;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .paragraph p {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .apply-btn,
+  .apply-btn2 {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
